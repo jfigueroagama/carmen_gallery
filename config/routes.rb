@@ -2,6 +2,8 @@ CarmenGallery::Application.routes.draw do
   get "pages/home"
 
   get "pages/contact"
+  
+  get "pages/statement"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
