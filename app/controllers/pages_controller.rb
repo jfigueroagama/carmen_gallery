@@ -3,8 +3,20 @@ class PagesController < ApplicationController
     @title = "Home"
   end
 
-  def contact
-    @title = "Contact"
+  def paintings
+    @title = "Paintings"
+  end
+  
+  def drawings
+    @title = "Drawings"
+  end
+
+  def prints
+    @title = "Prints"
+  end
+
+  def tshirts
+    @title = "T-Shirts"
   end
 
   def statement

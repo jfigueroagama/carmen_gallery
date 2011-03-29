@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @artwork.name %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @artwork.email %>
+</p>
+
+<p>
+  <b>Art:</b>
+  <%= @artwork.art %>
+</p>
+
+<p>
+	<b> Artwork: </b>
+	<%= image_tag @artwork.avatar.url(:small) %>
+</p>
+
+<%= link_to 'Edit', edit_artwork_path(@artwork) %> |
+<%= link_to 'Back', artworks_path %>

@@ -1,10 +1,23 @@
 CarmenGallery::Application.routes.draw do
-  get "pages/home"
 
-  get "pages/contact"
+  resources :artworks
   
-  get "pages/statement"
+  match ':controller/:id/:action(.:format)'
 
+  match '/signup', :to => 'users#new'
+  # get "pages/home"
+  root :to => 'pages#home'
+  # get "pages/drawings"
+  match '/drawings', :to => 'pages#drawings'
+  # get "pages/statement"
+  match '/statement', :to => 'pages#statement'
+  # get "pages/paintings"
+  match '/paintings', :to => 'pages#paintings'
+  # get "pages/prints"
+  match '/prints', :to => 'pages#prints'
+  # get "pages/tshirts"
+  match '/tshirts', :to => 'pages#tshirts'
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
