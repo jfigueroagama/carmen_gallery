@@ -1,6 +1,7 @@
 CarmenGallery::Application.routes.draw do
 
   resources :artworks
+  resources :users
   
   match ':controller/:id/:action(.:format)'
 

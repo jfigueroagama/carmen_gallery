@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110327214954) do
+ActiveRecord::Schema.define(:version => 20110330182550) do
 
   create_table "artworks", :force => true do |t|
     t.string   "name"
@@ -26,5 +26,16 @@ ActiveRecord::Schema.define(:version => 20110327214954) do
     t.binary   "avatar_thumb_file",   :limit => 2147483647
     t.string   "email"
   end
+
+  create_table "users", :force => true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "encrypted_password"
+    t.string   "salt"
+  end
+
+  add_index "users", ["email"], :name => "index_users_on_email", :unique => true
 
 end

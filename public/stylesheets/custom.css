@@ -138,4 +138,24 @@ border-radius: 			10px;
   list-style: square;
 }
 
+/* User show page */
+
+table.profile {
+width: 100%;
+margin-bottom: 0;
+}
+td.main {
+width: 70%;
+padding: 1em;
+}
+td.sidebar {
+width: 30%;
+padding: 1em;
+vertical-align: top;
+background: #e5e5e5;
+}
+.profile img.gravatar {
+border: 1px solid #7f7f7f;
+margin-bottom: -15px;
+}
 
