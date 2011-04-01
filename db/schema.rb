@@ -21,9 +21,6 @@ ActiveRecord::Schema.define(:version => 20110330182550) do
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
-    t.binary   "avatar_file",         :limit => 2147483647
-    t.binary   "avatar_small_file",   :limit => 2147483647
-    t.binary   "avatar_thumb_file",   :limit => 2147483647
     t.string   "email"
   end
 

@@ -1,0 +1,33 @@
+<%= form_for(@artwork, :html => { :multipart => true }) do |f| %>
+  <% if @artwork.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@artwork.errors.count, "error") %> prohibited this artwork from being saved:</h2>
+
+      <ul>
+      <% @artwork.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+  	<%= f.label :email %><br />
+	<%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :art %><br />
+    <%= f.text_field :art %>
+  </div>
+  <div class="field">
+  	<%= f.label :avatar %><br />
+	<%= f.file_field :avatar %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
