@@ -84,10 +84,11 @@ class ArtworksController < ApplicationController
     end
   end
   
-  #def avatars
-    #artwork = Artwork.find(params[:id])
-    #style = params[:style]?params[:style] : 'original'
+  def avatars
+    artwork = Artwork.find(params[:id])
+    style = params[:style]?params[:style] : 'original'
+    send_file artwork.avatar.path(style), :type => artwork.avatar_content_type
     #send_data artwork.avatar.file_contents(style), :type => artwork.avatar_content_type
-  #end
+  end
   
 end
