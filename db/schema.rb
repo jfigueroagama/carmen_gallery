@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110330182550) do
+ActiveRecord::Schema.define(:version => 20110407011032) do
 
   create_table "artworks", :force => true do |t|
     t.string   "name"
@@ -22,6 +22,9 @@ ActiveRecord::Schema.define(:version => 20110330182550) do
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
     t.string   "email"
+    t.binary   "avatar_file",         :limit => 2147483647
+    t.binary   "avatar_small_file",   :limit => 2147483647
+    t.binary   "avatar_thumb_file",   :limit => 2147483647
   end
 
   create_table "users", :force => true do |t|

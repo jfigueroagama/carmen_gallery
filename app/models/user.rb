@@ -1,13 +1,15 @@
 # == Schema Information
-# Schema version: 20110329153604
+# Schema version: 20110407011032
 #
 # Table name: users
 #
-#  id         :integer(4)      not null, primary key
-#  name       :string(255)
-#  email      :string(255)
-#  created_at :datetime
-#  updated_at :datetime
+#  id                 :integer(4)      not null, primary key
+#  name               :string(255)
+#  email              :string(255)
+#  created_at         :datetime
+#  updated_at         :datetime
+#  encrypted_password :string(255)
+#  salt               :string(255)
 #
 
 require 'digest'

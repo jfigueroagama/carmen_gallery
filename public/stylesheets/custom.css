@@ -29,7 +29,7 @@ font-size: 250%;
 /* Links */
 
 a {
-color: #4d4d4d;
+color: #000000;
 text-decoration: none;
 }
 
@@ -102,10 +102,6 @@ border-radius: 			10px;
 }
 
 /* Paper clip Notice and Errors */
-
-#notice {
-  color: green;
-}
 
 .field_with_errors {
   padding: 2px;

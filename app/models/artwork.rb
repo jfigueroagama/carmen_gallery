@@ -1,5 +1,5 @@
 # == Schema Information
-# Schema version: 20110327214954
+# Schema version: 20110407011032
 #
 # Table name: artworks
 #
@@ -12,17 +12,17 @@
 #  avatar_content_type :string(255)
 #  avatar_file_size    :integer(4)
 #  avatar_updated_at   :datetime
+#  email               :string(255)
 #  avatar_file         :binary(21474836
 #  avatar_small_file   :binary(21474836
 #  avatar_thumb_file   :binary(21474836
-#  email               :string(255)
 #
 
 class Artwork < ActiveRecord::Base
   has_attached_file :avatar,
-                    #:storage => :database,
-                    :styles => {:thumb => "75x75>", :small => "200x200>"},
-                    :path => ':rails_root/nonpublic/system/:attachment/:id/:style/:basename.:extension',
+                    :storage => :database,
+                    :styles => {:thumb => "75x75>", :small => "400x400>"},
+                    #:path => ':rails_root/nonpublic/system/:attachment/:id/:style/:basename.:extension',
                     :url => '/:class/:id/:attachment?style=:style'
-  #default_scope select_without_file_columns_for(:avatar)
+  default_scope select_without_file_columns_for(:avatar)
 end
