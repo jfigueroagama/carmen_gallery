@@ -7,4 +7,7 @@ module ApplicationHelper
       "#{base_title} #{@title}"
     end
   end
+  def logo
+    image_tag("Carmen.png", :alt => "Carmen's Gallery", :class => "round")
+  end
 end
