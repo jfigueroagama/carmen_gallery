@@ -6,6 +6,7 @@ class ArtworksController < ApplicationController
   # GET /artworks.xml
   def index
     @artworks = Artwork.all
+    #@artworks = Artwork.paginate(:page => params[:page])
 
     respond_to do |format|
       format.html # index.html.erb

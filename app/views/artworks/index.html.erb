@@ -1,4 +1,4 @@
-<h1>Listing artworks</h1>
+<h1>Listing Artworks</h1>
 
 <table>
   <tr>
@@ -12,14 +12,14 @@
   </tr>
 
 <% @artworks.each do |artwork| %>
-  <tr>
+  <tr class="artworks">
     <td><%= image_tag artwork.avatar.url(:thumb) %></td>
 	<td><%= artwork.name %></td>
 	<td><%= artwork.email %></td>
     <td><%= artwork.art %></td>
     <td><%= link_to 'Show', artwork %></td>
     <td><%= link_to 'Edit', edit_artwork_path(artwork) %></td>
-    <td><%= button_to 'Delete', artwork, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= button_to 'Delete', artwork, :method => :delete %></td>
   </tr>
 <% end %>
 </table>
