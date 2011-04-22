@@ -1,6 +1,4 @@
-<p id="notice">
-	
-</p>
+<h1>Showing Carmen's Artwork</h1>
 
 <p>
   <b>Name:</b>
@@ -22,5 +20,13 @@
 	<%= image_tag @artwork.avatar.url(:small) %>
 </p>
 
-<%= link_to 'Edit', edit_artwork_path(@artwork) %> |
-<%= link_to 'Back', artworks_path %>
+<% if signed_in? %>
+<%= link_to "Edit", edit_artwork_path(@artwork) %> |
+<%= link_to "Back to Artwork's Administration", artworks_path %>
+<% end %>
+<% if !signed_in? %>
+<% if @artwork.art == 'painting' %><%= link_to "Back to Carmen's Paintings", paintings_path %><% end %>
+<% if @artwork.art == 'drawing' %><%= link_to "Back to Carmen's Drawings", drawings_path %><% end %>
+<% if @artwork.art == 'print' %><%= link_to "Back to Carmen's Prints", prints_path %><% end %>
+<% if @artwork.art == 'tshirt' %><%= link_to "Back to Carmen's T-Shirts", tshirts_path %><% end %>
+<% end %>

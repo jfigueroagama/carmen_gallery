@@ -12,7 +12,7 @@
   </tr>
 
 <% @artworks.each do |artwork| %>
-  <tr class="artworks">
+  <tr>
     <td><%= image_tag artwork.avatar.url(:thumb) %></td>
 	<td><%= artwork.name %></td>
 	<td><%= artwork.email %></td>
