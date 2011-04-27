@@ -82,8 +82,8 @@ text-decoration: underline;
 
 footer {
 text-align: center;
-margin-top: 20px;
-width: 400px;
+margin-top: 50px;
+width: 350px;
 margin-left: auto;
 margin-right: auto;
 }
@@ -174,3 +174,14 @@ margin-bottom: -15px;
 div.field, div.actions {
 margin-bottom: 10px;
 }
+
+/* Users */
+
+ul.users {
+margin-top: 1em;
+}
+
+.users li {
+list-style: none;
+}
+

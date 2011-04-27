@@ -2,12 +2,14 @@
 	<nav class="round">
 		<ul>
 			<% if signed_in? %>
-			<li><%= link_to "Administrator Profile", current_user %></li>
+			<li><%= link_to "Administrator index", users_path %></li>
+			<li><%= link_to "Profile", current_user %></li>
+			<li><%= link_to "Settings", edit_user_path(current_user)%></li>
 			<% end %>
 			<% if signed_in? %>
-			<li><%= link_to "Admin Sign out", signout_path, :method => :delete %></li>
+			<li><%= link_to "Sign out", signout_path, :method => :delete %></li>
 			<% else %>
-			<li><%= link_to "Admin Sign in", signin_path %></li>
+			<li><%= link_to "Administrator Sign in", signin_path %></li>
 			<% end %>
 		</ul>
 	</nav>
