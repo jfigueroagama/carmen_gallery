@@ -1,24 +1,21 @@
 <h1>Showing Carmen's Artwork</h1>
 
-<p>
-  <b>Name:</b>
-  <%= @artwork.name %>
-</p>
-
-<p>
-  <b>Email:</b>
-  <%= @artwork.email %>
-</p>
-
-<p>
-  <b>Art:</b>
-  <%= @artwork.art %>
-</p>
-
-<p>
-	<b> Artwork: </b>
-	<%= image_tag @artwork.avatar.url(:small) %>
-</p>
+<table class="artwork" summary="Showing artwork">
+	<td class="main">
+		<%= image_tag @artwork.avatar.url(:small) %>
+		<% unless @artwork.microposts.empty? %>
+			<table class="microposts" summary="Artwork microposts">
+				<%= render @microposts %>
+			</table>
+			<%= will_paginate @microposts %>
+		<% end %>
+	</td>
+	<td class="sidebar round">
+		<strong>Name: </strong>
+		<%= @artwork.name %><br />
+		<%= @artwork.art %><br />
+	</td>
+</table>
 
 <% if signed_in? %>
 <%= link_to "Edit", edit_artwork_path(@artwork) %> |

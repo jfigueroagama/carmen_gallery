@@ -19,10 +19,14 @@
 #
 
 class Artwork < ActiveRecord::Base
+  
+  has_many :microposts, :dependent => :destroy
+  
   has_attached_file :avatar,
                     :storage => :database,
                     :styles => {:thumb => "75x75>", :small => "400x400>"},
                     #:path => ':rails_root/nonpublic/system/:attachment/:id/:style/:basename.:extension',
                     :url => '/:class/:id/:attachment?style=:style'
   default_scope select_without_file_columns_for(:avatar)
+
 end

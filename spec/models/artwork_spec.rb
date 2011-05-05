@@ -1,11 +1,11 @@
 require 'spec_helper'
 
  describe Artwork do
- #  before(:each) do
- #  @attr = { :name => "My Artwork",
- #            :email => "myartwork@carmen_gallery.com",
- #            :art => "drawing" }
- #  end
+   before(:each) do
+    @attr = { :name => "My Artwork",
+              :email => "myartwork@carmen_gallery.com",
+              :art => "drawing" }
+   end
   
  #it "should create a new instance given valid attributes" do
    #Artwork.create!(@attr)
@@ -47,5 +47,25 @@ require 'spec_helper'
       #invalid_email_artwork.should_not be_valid
     #end
   #end
+  
+  describe "micropost association" do
+    before(:each) do
+      @artwork = Artwork.create(@attr)
+      @mp1 = Factory(:micropost, :artwork => @artwork, :created_at => 1.day.ago)
+      @mp2 = Factory(:micropost, :artwork => @artwork, :created_at => 1.hour.ago)
+    end
+    it "should have a microposts attribute" do
+      @artwork.should respond_to(:microposts)
+    end
+    it "should have the right microposts in the right order" do
+      @artwork.microposts.should == [@mp2, @mp1]
+    end
+    it "should destroy associated microposts" do
+      @artwork.destroy
+      [@mp1, @mp2].each do |micropost|
+        Micropost.find_by_id(micropost.id).should be_nil
+      end
+    end
+  end
   
 end

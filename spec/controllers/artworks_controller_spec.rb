@@ -18,10 +18,10 @@ describe ArtworksController do
     end
   end
 
-  describe "GET show" do
+  describe "GET show" do  
     it "assigns the requested artwork as @artwork" do
-      Artwork.stub(:find).with("37") { mock_artwork }
-      get :show, :id => "37"
+      Artwork.stub(:find).with("1") { mock_artwork }
+      get :show, :id => "1"
       assigns(:artwork).should be(mock_artwork)
     end
   end
