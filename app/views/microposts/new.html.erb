@@ -1,6 +1,5 @@
-<h1>New micropost</h1>
-
-<%= form_for @micropost do |f| %>
+<!-- The New Micropost View -->
+<%= form_for(@micropost) do|f| %>
 <%= render 'shared/error_messages', :object => f.object %>
 <div class="field">
 	<%= f.label :name %><br />
@@ -11,6 +10,7 @@
 	<%= f.text_field :email %>
 </div>
 <div class="field">
+	<%= f.label :content %><br />
 	<%= f.text_area :content %>
 </div>
 <div class="actions">

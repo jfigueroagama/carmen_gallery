@@ -1,12 +1,10 @@
 class ArtworksController < ApplicationController
-  
   downloads_files_for :artwork, :avatar
   
   # GET /artworks
   # GET /artworks.xml
   def index
     @artworks = Artwork.all
-    #@artworks = Artwork.paginate(:page => params[:page])
 
     respond_to do |format|
       format.html # index.html.erb
@@ -18,6 +16,7 @@ class ArtworksController < ApplicationController
   # GET /artworks/1.xml
   def show
     @artwork = Artwork.find(params[:id])
+    $current_artwork = @artwork
     @microposts = @artwork.microposts.paginate(:page => params[:page])
     respond_to do |format|
       format.html # show.html.erb

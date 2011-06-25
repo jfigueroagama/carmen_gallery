@@ -20,7 +20,13 @@
 
 class Artwork < ActiveRecord::Base
   
+  email_regex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+  
   has_many :microposts, :dependent => :destroy
+  
+  validates :name, :presence => true, :length => { :maximum => 50 }
+  validates :email, :presence => true, :format => { :with => email_regex }
+  validates :art, :presence => true
   
   has_attached_file :avatar,
                     :storage => :database,

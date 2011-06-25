@@ -1,11 +1,15 @@
 <h1>Showing Carmen's Artwork</h1>
 
-<table class="artwork" summary="Showing artwork">
+<table class="artwork">
+  <tr>
 	<td class="main">
 		<%= image_tag @artwork.avatar.url(:small) %>
 		<% unless @artwork.microposts.empty? %>
-			<table class="microposts" summary="Artwork microposts">
-				<%= render @microposts %>
+			<table class="microposts">
+				<% @microposts.each do |micropost| %>
+					<%= render micropost %>
+				<% end %>
+				<!--<%= render @microposts %>-->
 			</table>
 			<%= will_paginate @microposts %>
 		<% end %>
@@ -14,7 +18,14 @@
 		<strong>Name: </strong>
 		<%= @artwork.name %><br />
 		<%= @artwork.art %><br />
+		<br />
+		<br />
+		<br />
+		<strong>Micropost </strong>
+		<%= @artwork.microposts.count %><br />
+		<%= link_to "New post for #{@artwork.name}", new_micropost_path %>
 	</td>
+  </tr>
 </table>
 
 <% if signed_in? %>

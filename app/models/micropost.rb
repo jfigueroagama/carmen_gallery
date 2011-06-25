@@ -14,10 +14,13 @@
 
 class Micropost < ActiveRecord::Base
   attr_accessible :name, :email, :content
+  email_regex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   
   belongs_to :artwork
   
-  validates :content, :presence => true, :length => {:maximum => 140}
+  validates :name, :presence => true, :length => { :maximum => 50 }
+  validates :email, :presence => true, :format => { :with => email_regex }
+  validates :content, :presence => true, :length => { :maximum => 140 }
   validates :artwork_id, :presence => true
   
   default_scope :order => 'microposts.created_at DESC'
