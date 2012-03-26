@@ -4,7 +4,6 @@
   <tr>
     <th>Artwork</th>
 	<th>Name</th>
-	<th>Email</th>
     <th>Art</th>
     <th></th>
     <th></th>
@@ -15,11 +14,10 @@
   <tr>
     <td><%= image_tag artwork.avatar.url(:thumb) %></td>
 	<td><%= artwork.name %></td>
-	<td><%= artwork.email %></td>
     <td><%= artwork.art %></td>
     <td><%= link_to 'Show', artwork %></td>
     <td><%= link_to 'Edit', edit_artwork_path(artwork) %></td>
-    <td><%= button_to 'Delete', artwork, :method => :delete %></td>
+    <td class="actions"><%= button_to 'Delete', artwork, :method => :delete, :confirm => "Are you sure?", :class => "button" %></td>
   </tr>
 <% end %>
 </table>

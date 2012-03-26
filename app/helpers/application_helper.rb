@@ -10,7 +10,11 @@ module ApplicationHelper
   end
   
   def logo
-    image_tag("Carmen.png", :alt => "Carmen's Gallery", :class => "round")
+    image_tag("CarmenHome25.jpg", :alt => "Carmen's Gallery", :class => "round")
+  end
+  
+  def artwork_image(image)
+    image_tag(image)
   end
   
 end

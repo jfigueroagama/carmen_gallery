@@ -1,13 +1,13 @@
-<tr class="micropost">
+<tr class="microposts">
 	<td class="main">
 		<%= gravatar_for_micropost micropost %>
-		<%= micropost.name %> <br />
-	<span class="content">
-		<%= micropost.content %>
-	</span> <br /> <br />
-	<span class="timestamp">
-		Posted <%= time_ago_in_words(micropost.created_at) %> ago.
-	</span>
+		<%= micropost.name %><br />
+		<span class="content">
+			<%= micropost.content %>
+		</span> <br />
+		<span class="timestamp">
+			Posted <%= time_ago_in_words(micropost.created_at) %> ago.
+		</span>
 	</td>
 	<% if signed_in? %>
 	<td>

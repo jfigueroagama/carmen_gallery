@@ -16,18 +16,19 @@
     <%= f.text_field :name %>
   </div>
   <div class="field">
-  	<%= f.label :email %><br />
+  	<%= f.label :email, "Artwork Id (email)" %><br />
 	<%= f.text_field :email %>
   </div>
   <div class="field">
     <%= f.label :art %><br />
-    <%= f.select :art, options_for_select(["painting", "drawing", "print", "tshirt"]) %>
+    <%= f.select :art, options_for_select(["painting", "drawing", "print", "tshirt"]), :class => "select" %>
   </div>
   <div class="field">
-  	<%= f.label :avatar %><br />
-	<%= f.file_field :avatar %>
+  	<%= f.label :avatar, "Artwork' image" %><br />
+	<%= f.file_field :avatar, :class => "upload" %>
   </div>
+  <br />
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Save Artwork", :class => "button" %>
   </div>
 <% end %>

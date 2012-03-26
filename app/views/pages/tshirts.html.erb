@@ -10,10 +10,10 @@
 
 <% @artworks.each do |artwork| %>
   <tr>
-    <td><%= image_tag artwork.avatar.url(:thumb) %></td>
+    <td><%= link_to artwork_image(artwork.avatar.url(:thumb)), artwork %></td>
 	<td><%= artwork.name %></td>
     <td><%= artwork.art %></td>
-    <td><%= link_to 'Show', artwork %></td>
+    <!--<td><%= link_to 'Show', artwork %></td>-->
   </tr>
 <% end %>
 </table>
