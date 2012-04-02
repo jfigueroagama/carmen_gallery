@@ -45,11 +45,10 @@ font-weight: bold;
 color: #F5F5F5;
 }
 
-
 /* Links */
 
 a {
-color: #990000;
+color: #F5F5F5;
 text-decoration: none;
 font-size: 100%;
 }
@@ -187,7 +186,7 @@ padding: 1em;
 }
 
 td.sidebar {
-width: 35%;
+width: 40%;
 padding: 1em;
 vertical-align: top;
 background: #000000;
