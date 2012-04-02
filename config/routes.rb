@@ -25,6 +25,8 @@ CarmenGallery::Application.routes.draw do
   match '/prints', :to => 'pages#prints'
   # get "pages/tshirts"
   match '/tshirts', :to => 'pages#tshirts'
+  # get "pages/about"
+  match '/about', :to => 'pages#about'
   
   # The priority is based upon order of creation:
   # first created -> highest priority.

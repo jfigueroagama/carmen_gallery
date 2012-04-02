@@ -26,5 +26,9 @@ class PagesController < ApplicationController
   def statement
     @title = "Statement"
   end
+  
+  def about
+    @title = "Carmen's Gallery"
+  end
 
 end
