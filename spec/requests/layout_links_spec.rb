@@ -22,9 +22,9 @@ describe "LayoutLinks" do
     response.should have_selector('title', :content => "Prints")
   end
   
-  it "should have a T-Shirts page at '/tshirts'" do
-    get '/tshirts'
-    response.should have_selector('title', :content => "T-Shirts")
+  it "should have a Objects page at '/objects'" do
+    get '/objects'
+    response.should have_selector('title', :content => "Objects")
   end
   
   it "should have a Statement page at '/statement'" do

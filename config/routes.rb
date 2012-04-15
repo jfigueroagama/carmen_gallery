@@ -24,7 +24,7 @@ CarmenGallery::Application.routes.draw do
   # get "pages/prints"
   match '/prints', :to => 'pages#prints'
   # get "pages/tshirts"
-  match '/tshirts', :to => 'pages#tshirts'
+  match '/objects', :to => 'pages#objects'
   # get "pages/about"
   match '/about', :to => 'pages#about'
   
