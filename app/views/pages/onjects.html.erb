@@ -1,0 +1,19 @@
+<h1>Carmen's Gallery T-Shirts</h1>
+
+<table>
+  <tr>
+    <th>Artwork</th>
+	<th>Name</th>
+    <th>Art</th>
+    <th></th>
+  </tr>
+
+<% @artworks.each do |artwork| %>
+  <tr>
+    <td><%= link_to artwork_image(artwork.avatar.url(:thumb)), artwork %></td>
+	<td><%= artwork.name %></td>
+    <td><%= artwork.art %></td>
+    <!--<td><%= link_to 'Show', artwork %></td>-->
+  </tr>
+<% end %>
+</table>
