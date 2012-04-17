@@ -20,7 +20,7 @@ class PagesController < ApplicationController
 
   def objects
     @title = "Objects"
-    @artworks = Artwork.where("art = ? OR art = ?", 'tshirt', 'object').order("created_at DESC")
+    @artworks = Artwork.where("art = ? or art = ?", 'tshirt', 'object').order("created_at DESC")
   end
 
   def statement
