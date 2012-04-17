@@ -22,7 +22,7 @@ describe Micropost do
       @micropost.should respond_to(:artwork)
     end
     
-    it "should have the right assocciated artwork" do
+    it "should have the right associated artwork" do
       @micropost.artwork_id.should == @artwork.id
       @micropost.artwork.should == @artwork
     end

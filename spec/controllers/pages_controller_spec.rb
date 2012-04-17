@@ -55,8 +55,6 @@ describe PagesController do
     it "should have the right title" do
       get :objects
       response.should have_selector("title", :content => "Objects")
-<<<<<<< HEAD
-=======
     end
   end
   
@@ -68,7 +66,6 @@ describe PagesController do
     it "should have the right title" do
       get :about
       response.should have_selector("title", :content => "Carmen's Gallery")
->>>>>>> stylesheet
     end
   end
   
