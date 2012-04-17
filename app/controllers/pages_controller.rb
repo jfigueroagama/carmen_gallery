@@ -18,9 +18,9 @@ class PagesController < ApplicationController
     @artworks = Artwork.where("art = ?", 'print').order("created_at DESC")
   end
 
-  def tshirts
-    @title = "T-Shirts"
-    @artworks = Artwork.where("art = ?", 'tshirt').order("created_at DESC")
+  def objects
+    @title = "Objects"
+    @artworks = Artwork.where("art = ? OR art = ?", 'tshirt', 'object').order("created_at DESC")
   end
 
   def statement

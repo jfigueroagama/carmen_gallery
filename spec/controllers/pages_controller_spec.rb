@@ -47,14 +47,25 @@ describe PagesController do
     end
   end
   
-  describe "GET 'tshirts'" do
+  describe "GET 'objects'" do
     it "should be successful" do
-      get :tshirts
+      get :objects
       response.should be_success
     end
     it "should have the right title" do
-      get :tshirts
-      response.should have_selector("title", :content => "T-Shirts")
+      get :objects
+      response.should have_selector("title", :content => "Objects")
+    end
+  end
+  
+  describe "GET 'about'" do
+    it "should be successful" do
+      get :about
+      response.should be_success
+    end
+    it "should have the right title" do
+      get :about
+      response.should have_selector("title", :content => "Carmen's Gallery")
     end
   end
   
