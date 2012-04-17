@@ -114,7 +114,7 @@ float: none;
 /* Button */
 
 .button {
-margin.top: 2em;
+margin-top: 2em;
 cursor: pointer;
 font-size: 110%;
 font-family:"Franklin Gothic Book";
@@ -124,7 +124,7 @@ background: #000000;
 
 /* Upload */
 .upload {
-margin.top: 2em;
+margin-top: 2em;
 border-width: 2px;
 border-style: solid;
 color: #F5F5F5;
