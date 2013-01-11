@@ -1,13 +1,13 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.10'
+gem 'rails', '3.0.19'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 # gem 'sqlite3-ruby', :require => 'sqlite3'
 
 gem 'mysql'
-gem 'mysql2'
+gem 'mysql2', '0.2.9'
 gem 'will_paginate', '3.0.pre2'
 gem 'gravatar_image_tag', '1.0.0.pre2'
 
@@ -19,7 +19,7 @@ end
 group :test do
   gem 'rspec-rails', '2.6.1'
   gem 'webrat', '0.7.1'
-  gem 'factory_girl_rails'
+  gem 'factory_girl_rails', '1.0'
 end
 
 # Use unicorn as the web server
