@@ -4,26 +4,11 @@
   <tr>
 	<td class="main">
 		<%= image_tag @artwork.avatar.url(:small) %>
-		<% unless @artwork.microposts.empty? %>
-			<table class="microposts">
-				<% @microposts.each do |micropost| %>
-					<%= render micropost %>
-				<% end %>
-				<!--<%= render @microposts %>-->
-			</table>
-			<%= will_paginate @microposts %>
-		<% end %>
 	</td>
 	<td class="sidebar round">
 		<strong>Name: </strong>
 		<%= @artwork.name %><br />
 		<%= @artwork.art %><br />
-		<br />
-		<br />
-		<br />
-		<strong>Micropost </strong>
-		<%= @artwork.microposts.count %><br />
-		<%= link_to "New post for #{@artwork.name}", new_micropost_path %>
 	</td>
   </tr>
 </table>
@@ -31,8 +16,7 @@
 <% if signed_in? %>
 <%= link_to "Edit", edit_artwork_path(@artwork) %> |
 <%= link_to "Back to Artwork's Administration", artworks_path %>
-<% end %>
-<% if !signed_in? %>
+<% else %>
 <% if @artwork.art == 'painting' %><%= link_to "Back to Carmen's Paintings", paintings_path %><% end %>
 <% if @artwork.art == 'drawing' %><%= link_to "Back to Carmen's Drawings", drawings_path %><% end %>
 <% if @artwork.art == 'print' %><%= link_to "Back to Carmen's Prints", prints_path %><% end %>

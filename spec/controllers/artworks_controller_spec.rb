@@ -42,13 +42,13 @@ describe ArtworksController do
       assigns(:artwork).should == @artwork
     end
     
-    it "should show the artwork's microposts" do
-      mp1 = Factory(:micropost, :artwork => @artwork, :content => "Foo bar")
-      mp2 = Factory(:micropost, :artwork => @artwork, :content => "Baz quux")
-      get :show, :id => @artwork
-      response.should have_selector("span.content", :content => mp1.content)
-      response.should have_selector("span.content", :content => mp2.content)
-    end
+    #it "should show the artwork's microposts" do
+    #  mp1 = Factory(:micropost, :artwork => @artwork, :content => "Foo bar")
+    #  mp2 = Factory(:micropost, :artwork => @artwork, :content => "Baz quux")
+    #  get :show, :id => @artwork
+    #  response.should have_selector("span.content", :content => mp1.content)
+    #  response.should have_selector("span.content", :content => mp2.content)
+    #end
     
   end
 

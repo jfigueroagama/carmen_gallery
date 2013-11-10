@@ -49,24 +49,24 @@ require 'spec_helper'
     end
    end
   
-  describe "micropost association" do
-    before(:each) do
-      @artwork = Artwork.create(@attr)
-      @mp1 = Factory(:micropost, :artwork => @artwork, :created_at => 1.day.ago)
-      @mp2 = Factory(:micropost, :artwork => @artwork, :created_at => 1.hour.ago)
-    end
-    it "should have a microposts attribute" do
-      @artwork.should respond_to(:microposts)
-    end
-    it "should have the right microposts in the right order" do
-     @artwork.microposts.should == [@mp2, @mp1]
-    end
-    it "should destroy associated microposts" do
-     @artwork.destroy
-     [@mp1, @mp2].each do |micropost|
-       Micropost.find_by_id(micropost.id).should be_nil
-     end
-    end
-  end # micropost association
+  #describe "micropost association" do
+  #  before(:each) do
+  #    @artwork = Artwork.create(@attr)
+  #    @mp1 = Factory(:micropost, :artwork => @artwork, :created_at => 1.day.ago)
+  #    @mp2 = Factory(:micropost, :artwork => @artwork, :created_at => 1.hour.ago)
+  #  end
+  #  it "should have a microposts attribute" do
+  #    @artwork.should respond_to(:microposts)
+  #  end
+  #  it "should have the right microposts in the right order" do
+  #   @artwork.microposts.should == [@mp2, @mp1]
+  #  end
+  #  it "should destroy associated microposts" do
+  #   @artwork.destroy
+  #   [@mp1, @mp2].each do |micropost|
+  #     Micropost.find_by_id(micropost.id).should be_nil
+  #   end
+  #  end
+  #end # micropost association
   
 end

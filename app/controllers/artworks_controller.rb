@@ -17,7 +17,7 @@ class ArtworksController < ApplicationController
   def show
     @artwork = Artwork.find(params[:id])
     $current_artwork = @artwork
-    @microposts = @artwork.microposts.paginate(:page => params[:page])
+    #@microposts = @artwork.microposts.paginate(:page => params[:page])
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @artwork }

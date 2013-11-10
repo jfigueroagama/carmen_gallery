@@ -1,3 +1,4 @@
+# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -10,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110428210612) do
+ActiveRecord::Schema.define(:version => 20110425231210) do
 
   create_table "artworks", :force => true do |t|
     t.string   "name"
@@ -26,17 +27,6 @@ ActiveRecord::Schema.define(:version => 20110428210612) do
     t.binary   "avatar_small_file",   :limit => 2147483647
     t.binary   "avatar_thumb_file",   :limit => 2147483647
   end
-
-  create_table "microposts", :force => true do |t|
-    t.string   "name"
-    t.string   "email"
-    t.string   "content"
-    t.integer  "artwork_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "microposts", ["artwork_id"], :name => "index_microposts_on_artwork_id"
 
   create_table "users", :force => true do |t|
     t.string   "name"
